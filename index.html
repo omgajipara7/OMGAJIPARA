@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Om Gajipara - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -15,7 +16,9 @@
         }
         .hero {
             height: 100vh;
-            background: linear-gradient(to right, #ff6a00, #ee0979);
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('background.jpg'); /* Add your image path here */
+            background-size: cover;
+            background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -27,11 +30,15 @@
             100% { opacity: 1; }
         }
         .hero h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         .btn-custom {
             background-color: #ff6a00;
@@ -56,6 +63,134 @@
             background: #000;
             padding: 20px;
             text-align: center;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #ff6a00;
+        }
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #ff6a00;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: #ff6a00;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background: #ff6a00;
+            border: 4px solid #121212;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            left: 50%;
+        }
+        .right::after {
+            left: -12px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .skill-card {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+        .skill-card h5 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .skill-card p {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        .testimonial-section {
+            background: #1e1e1e;
+            padding: 50px 0;
+        }
+        .testimonial-card {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .testimonial-card h5 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .testimonial-card p {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        .blog-section {
+            padding: 50px 0;
+        }
+        .blog-card {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .blog-card h5 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .blog-card p {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        .blog-card a {
+            color: #ff6a00;
+            text-decoration: none;
+        }
+        .blog-card a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -92,39 +227,47 @@
     <div class="container mt-5">
         <!-- About Section -->
         <section id="about" class="text-center mb-5">
-            <h2 class="text-warning">About Me</h2>
-            <p>I am an enthusiastic AI/ML practitioner currently pursuing a Bachelor's in Information Technology. With a strong foundation in Python and machine learning algorithms, I have hands-on experience in building and optimizing models for real-world problem-solving. My passion lies in advancing AI technologies to create impactful solutions. During my internships, I worked with IBM Watson to design AI-powered chatbots and gained valuable web development experience at Eminent Coders. I am eager to continue growing in the AI/ML field and contribute to innovative projects.</p>
+            <h2 class="section-title">About Me</h2>
+            <p>Hi, I'm Om Gajipara, an enthusiastic AI/ML practitioner currently pursuing a Bachelor's in Information Technology. I have a strong passion for Python programming and enjoy solving complex problems through AI, automation, and web development. With hands-on experience in machine learning, deep learning, and chatbot development, I have worked with IBM Watson to create AI-powered chatbots and gained Django-based web development experience at Eminent Coders. I am always eager to explore new technologies, automate workflows, and contribute to innovative, data-driven solutions that drive technological advancement. 🚀</p>
         </section>
 
         <!-- Experience Section -->
         <section id="experience" class="mb-5">
-            <h2 class="text-warning">Experience</h2>
-            <div class="card p-3 mb-3">
-                <h5>Machine Learning Intern</h5>
-                <p><strong>CODTECH IT SOLUTIONS</strong> (Jan 2025 - Present)</p>
-                <p>Currently working on four key tasks as part of the internship:</p>
-                <ul>
-                    <li>Decision Tree Implementation: Building and visualizing a decision tree model using scikit-learn.</li>
-                    <li>Sentiment Analysis: Analyzing customer reviews with TF-IDF vectorization and logistic regression.</li>
-                    <li>Image Classification: Developing a CNN for image classification using TensorFlow or PyTorch.</li>
-                    <li>Recommendation System: Creating a recommendation system with collaborative filtering or matrix factorization.</li>
-                </ul>
-            </div>
-            <div class="card p-3 mb-3">
-                <h5>Artificial Intelligence Intern</h5>
-                <p><strong>IBM</strong> (Jun 2024 - Jul 2024)</p>
-                <p>Designed and deployed intelligent chatbots using IBM Watsonx Assistant. Developed HexaBot for the HexaCore website, enabling it to provide real-time information and project details. Collaborated with cross-functional teams to integrate AI solutions into workflows.</p>
-            </div>
-            <div class="card p-3 mb-3">
-                <h5>Web Developer Intern</h5>
-                <p><strong>Eminent Coders</strong> (Oct 2023 - Mar 2024)</p>
-                <p>Gained hands-on experience in Django and learned how web applications are created, including how the backend and frontend connect. Explored the roles of views.py, models.py, urls.py, settings.py, and forms.py. Built multiple projects, including HEXACONNECT, Stock Tracker, and YouTube Audio Downloader.</p>
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="card p-3">
+                        <h5>Machine Learning Intern</h5>
+                        <p><strong>CODTECH IT SOLUTIONS</strong> (Jan 2025 - Present)</p>
+                        <p>Currently working on four key tasks as part of the internship:</p>
+                        <ul>
+                            <li>Decision Tree Implementation: Building and visualizing a decision tree model using scikit-learn.</li>
+                            <li>Sentiment Analysis: Analyzing customer reviews with TF-IDF vectorization and logistic regression.</li>
+                            <li>Image Classification: Developing a CNN for image classification using TensorFlow or PyTorch.</li>
+                            <li>Recommendation System: Creating a recommendation system with collaborative filtering or matrix factorization.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="card p-3">
+                        <h5>Artificial Intelligence Intern</h5>
+                        <p><strong>IBM</strong> (Jun 2024 - Jul 2024)</p>
+                        <p>Designed and deployed intelligent chatbots using IBM Watsonx Assistant. Developed HexaBot for the HexaCore website, enabling it to provide real-time information and project details. Collaborated with cross-functional teams to integrate AI solutions into workflows.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="card p-3">
+                        <h5>Web Developer Intern</h5>
+                        <p><strong>Eminent Coders</strong> (Oct 2023 - Mar 2024)</p>
+                        <p>Gained hands-on experience in Django and learned how web applications are created, including how the backend and frontend connect. Explored the roles of views.py, models.py, urls.py, settings.py, and forms.py. Built multiple projects, including HEXACONNECT, Stock Tracker, and YouTube Audio Downloader.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Education Section -->
         <section id="education" class="mb-5">
-            <h2 class="text-warning">Education</h2>
+            <h2 class="section-title">Education</h2>
             <div class="card p-3 mb-3">
                 <h5>VVP Engineering College - India</h5>
                 <p><strong>Bachelor of Engineering (BE), Information Technology</strong> (2021 - 2025)</p>
@@ -136,73 +279,108 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="mb-5">
-            <h2 class="text-warning text-center">Projects</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <h5>HxaConnect</h5>
-                        <p>HexaConnect is a web application where Users fill out a form, receive an acknowledgment email, and the company gets notified instantly. Built with Django, it ensures secure and seamless communication. 🚀</p>
-                        <a href="https://www.linkedin.com/posts/omgajipara_webapplication-django-contactform-activity-7212127268289073152-tWjf?utm_source=share&utm_medium=member_desktop&rcm=ACoAADz9xn8BBjR1wksdPRQJpOpmYw9sYJd_6mM" class="btn btn-warning">View Project</a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <h5>StockTracker</h5>
-                        <p>StockTracker is a web app that provides real-time stock price tracking. Built with Django and API integration, it helps users monitor stock trends efficiently. 📈🚀</p>
-                        <a href="https://www.linkedin.com/posts/omgajipara_exciting-news-check-it-out-live-activity-7211033950650093571-asjj?utm_source=share&utm_medium=member_desktop&rcm=ACoAADz9xn8BBjR1wksdPRQJpOpmYw9sYJd_6mM" class="btn btn-warning">View Project</a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <h5>Sentiment Analysis</h5>
-                        <p>AI model that classifies text sentiment using TF-IDF and logistic regression.</p>
-                        <a href="#" class="btn btn-warning">View Project</a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <h5>YouTube Audio Downloader</h5>
-                        <p>Web app for downloading YouTube video audio using Python and Django.</p>
-                        <a href="#" class="btn btn-warning">View Project</a>
-                    </div>
-                </div>
+       <!-- Projects Section -->
+<section id="projects" class="mb-5">
+    <h2 class="section-title text-center">Projects</h2>
+    <div class="row gy-4"> <!-- Added 'gy-4' for spacing -->
+        <div class="col-md-6">
+            <div class="card p-3">
+                <h5>HexaConnect</h5>
+                <p>HexaConnect is a web application where users fill out a form, receive an acknowledgment email, and the company gets notified instantly. 🚀</p>
+                <a href="https://www.linkedin.com/posts/omgajipara_webapplication-django-contactform-activity-7212127268289073152-tWjf?utm_source=share&utm_medium=member_desktop&rcm=ACoAADz9xn8BBjR1wksdPRQJpOpmYw9sYJd_6mM" class="btn btn-warning">View Project</a>
             </div>
-        </section>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card p-3">
+                <h5>StockTracker</h5>
+                <p>StockTracker is a web app that provides real-time stock price tracking. Built with Django and API integration, it helps users monitor stock trends efficiently. 📈🚀</p>
+                <a href="https://www.linkedin.com/posts/omgajipara_exciting-news-check-it-out-live-activity-7211033950650093571-asjj?utm_source=share&utm_medium=member_desktop&rcm=ACoAADz9xn8BBjR1wksdPRQJpOpmYw9sYJd_6mM" class="btn btn-warning">View Project</a>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card p-3">
+                <h5>Sentiment Analysis</h5>
+                <p>An AI-powered model that classifies text sentiment as positive, negative, or neutral using TF-IDF vectorization and logistic regression. It helps in understanding customer feedback, social media trends, and text-based emotions efficiently. 🚀</p>
+                <a href="#" class="btn btn-warning">View Project</a>
+            </div>
+        </div>
+
+         <div class="col-md-6">
+            <div class="card p-3">
+                <h5>HexaBot</h5>
+                <p>An AI-powered chatbot built using IBM Watson that provides real-time project details, answers queries, shares jokes, and enhances user interaction on HexaCore. 🚀</p>
+                <a href="https://www.linkedin.com/posts/omgajipara_hexacore-webapps-djangorest-activity-7217221455556575233--Z3e?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADz9xn8BBjR1wksdPRQJpOpmYw9sYJd_6mM" class="btn btn-warning">View Project</a>
+            </div>
+        </div>
+
+
+        <div class="col-md-6">
+            <div class="card p-3">
+                <h5>YouTube Audio Downloader</h5>
+                <p>Web app for downloading YouTube video audio using Python and Django.</p>
+                <a href="#" class="btn btn-warning">View Project</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
         <!-- Skills Section -->
         <section id="skills" class="mb-5">
-            <h2 class="text-warning">Skills</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <ul>
-                        <li>Python (Programming Language)</li>
-                        <li>Django</li>
-                        <li>Machine Learning</li>
-                        <li>Artificial Intelligence (AI)</li>
-                        <li>Deep Learning</li>
-                        <li>Data Cleaning</li>
-                    </ul>
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h5>Python</h5>
+                    <p>The language I love to code in! 🐍 Advanced proficiency in Python, making coding seamless and enjoyable. 🚀</p>
                 </div>
-                <div class="col-md-6">
-                    <ul>
-                        <li>Natural Language Processing (NLP)</li>
-                        <li>Image Processing</li>
-                        <li>Computer Vision</li>
-                        <li>ChatGPT</li>
-                        <li>Decision Trees</li>
-                        <li>Logistic Regression</li>
-                    </ul>
+                <div class="skill-card">
+                    <h5>Django & Django REST Framework</h5>
+                    <p>Experienced in developing scalable and secure web applications using Django and DRF.</p>
+                </div>
+                <div class="skill-card">
+                    <h5>Machine Learning & Deep Learning</h5>
+                    <p>Hands-on experience in building and fine-tuning machine learning and deep learning models.</p>
+                </div>
+                <div class="skill-card">
+                    <h5>Data Science & Analytics</h5>
+                    <p>Proficient in data preprocessing, visualization, and analysis using Pandas, NumPy, and Matplotlib.</p>
+                </div>
+                <div class="skill-card">
+                    <h5>Natural Language Processing (NLP)</h5>
+                    <p>Expertise in text classification, sentiment analysis, chatbot development, and transformers.</p>
+                </div>
+                <div class="skill-card">
+                    <h5>ETL & Data Engineering</h5>
+                    <p>Experience in Extract, Transform, Load (ETL) processes, managing structured and unstructured data.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h5>Cloud & Deployment</h5>
+                    <p>Experienced in deploying applications on Render, PythonAnywhere.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h5>Financial Analysis & Stock Market</h5>
+                    <p>Knowledge in stock market analysis and financial forecasting.</p>
+                </div>
+                <div class="skill-card">
+                    <h5>ChatGPT & Other AI </h5>
+                    <p>Leverage AI tools like ChatGPT to accelerate learning, automate tasks, and dive deeper into complex topics efficiently. 🚀</p>
                 </div>
             </div>
         </section>
 
+
         <!-- Contact Section -->
         <section id="contact" class="mb-5 text-center">
-            <h2 class="text-warning">Contact</h2>
-            <p>Email: <a href="mailto:ompatel99096@gmail.com" class="text-warning">ompatel99096@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/omgajipara/" class="text-warning" target="_blank">Om Gajipara</a></p>
+            <h2 class="section-title">Contact</h2>
+             <div class="social-icons">
+                <a href="https://github.com/omgajipara" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/omgajipara" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/omgajipara/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
         </section>
     </div>
 
